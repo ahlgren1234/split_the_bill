@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:split_the_bill/results.dart';
+import 'package:split_the_bill/settings.dart';
 
 class BillSplit extends StatefulWidget {
   const BillSplit({super.key});
@@ -82,6 +83,16 @@ class _BillSplitState extends State<BillSplit> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Split The Bill"),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            tooltip: 'Open Settings',
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingsPage()));
+            },
+          ),
+        ],
       ),
       backgroundColor: Colors.blue[100],
       body: SingleChildScrollView(
